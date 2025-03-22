@@ -55,7 +55,7 @@ export default function AboutSection() {
                 Ctrl+Z provides indie filmmakers with access to streaming platforms, leveraging our in-house
                 aggregator services for maxium exposure while securing limited theatrical runs.
                 We offer transparancy to our creative partners throughout the process of distributing 
-                and marketing our curated library of genre films.
+                and marketing our curated library of genre titles.
               </p>
             </div>
           </div>
