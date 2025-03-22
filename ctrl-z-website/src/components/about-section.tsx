@@ -46,7 +46,7 @@ export default function AboutSection() {
                 We offer comprehensive services for genre films, from festival strategy
                 and sales negotiations to theatrical runs through indie art house
                 cinema partnerships and digital platform distribution. Our future-forward
-                approach improves operational efficiency while creating new creative possibilities.
+                approach improves operational efficiency and allows for new creative possibilities.
               </p>
             </div>
             <div>
