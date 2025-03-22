@@ -11,8 +11,8 @@ export default function WorkSection() {
 
         <p className="text-xl leading-relaxed max-w-3xl mb-16">
           We promote and distribute distinctive genre films that challenge
-          conventions and connect with passionate audiences. Our curated portfolio
-          represents the innovative, future-forward content we champion.
+          conventions and connect with engaged audiences. Our curated portfolio
+          represents the unique stories and innovative content we champion.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
