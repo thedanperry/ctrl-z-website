@@ -12,16 +12,16 @@ export default function AboutSection() {
             </p>
             <p className="text-xl leading-relaxed">
               Our mission is to disrupt the traditional studio model by implementing
-              a lean, AI-enhanced operational structure that benefits both filmmakers
+              a lean, AI-driven operational structure that benefits both filmmakers
               and audiences.
             </p>
           </div>
 
           <div>
             <p className="text-xl leading-relaxed mb-8">
-              Founded by industry veterans with over 20 years of experience in film
+              Founded by an industry veteran with over 20 years of experience in film
               and television production, our team brings expertise from major media
-              companies including The Weinstein Company/Dimension Films, Paramount/MTV,
+              companies including AMC, The Weinstein Company/Dimension Films, Paramount,
               and Warner Bros. Discovery.
             </p>
             <p className="text-xl leading-relaxed mb-8">
@@ -31,7 +31,7 @@ export default function AboutSection() {
               film production.
             </p>
             <p className="text-xl leading-relaxed">
-              We're positioning for success in an AGI-driven future while building
+              We're positioning for success in an evolving future while building
               sustainable partnerships that prioritize creative vision and fair
               compensation for filmmakers.
             </p>
@@ -45,17 +45,17 @@ export default function AboutSection() {
             <div>
               <p className="text-xl leading-relaxed">
                 We offer comprehensive services for genre films, from festival strategy
-                and sales negotiations to theatrical bookings through our indie art house
-                cinema partnerships and digital platform distribution. Our AI-enhanced
+                and sales negotiations to theatrical bookings through indie art house
+                cinema partnerships and digital platform distribution. Our tech forward
                 approach improves operational efficiency while creating new creative possibilities.
               </p>
             </div>
             <div>
               <p className="text-xl leading-relaxed">
-                Ctrl+Z serves as a one-stop shop to streaming platforms, leveraging our
-                aggregator services for better exposure while securing limited theatrical
-                runs. Our technology-forward approach positions us as a pioneer in
-                implementing AI in the film industry.
+                Ctrl+Z provides indie filmmakers with access to streaming platforms, leveraging our in-house
+                aggregator services for maxium exposure while securing limited theatrical runs.
+                We offer transparancy to our creative partners throughout the process of distributing 
+                and marketing our curated library of genre films.
               </p>
             </div>
           </div>
