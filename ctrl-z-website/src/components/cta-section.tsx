@@ -13,9 +13,9 @@ export default function CTASection() {
           </h2>
 
           <p className="text-xl md:text-2xl mb-16 leading-relaxed">
-            We're redefining genre film distribution with innovative AI technology
+            We're redefining genre film distribution with technical innovations
             and filmmaker-centric partnerships. Let's work together to bring your
-            vision to passionate audiences worldwide.
+            vision to worldwide audiences.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
