@@ -8,7 +8,7 @@ export default function AboutSection() {
           <div>
             <p className="text-xl leading-relaxed mb-8">
               Ctrl+Z is a hybrid film label and sales company dedicated to discovering,
-              distributing, and producing distinctive genre films and future-forward content.
+              distributing, and producing distinctive genre films and content.
             </p>
             <p className="text-xl leading-relaxed">
               Our mission is to disrupt the traditional studio model by implementing
@@ -27,8 +27,7 @@ export default function AboutSection() {
             <p className="text-xl leading-relaxed mb-8">
               We've optioned screenplays to major genre producers, produced films that
               have premiered at festivals nationwide, and secured distribution across
-              multiple platforms, backed by extensive expertise in post-production and
-              film production.
+              multiple platforms, backed by extensive expertise in production and post-production.
             </p>
             <p className="text-xl leading-relaxed">
               We're positioning for success in an evolving future while building
@@ -45,7 +44,7 @@ export default function AboutSection() {
             <div>
               <p className="text-xl leading-relaxed">
                 We offer comprehensive services for genre films, from festival strategy
-                and sales negotiations to theatrical bookings through indie art house
+                and sales negotiations to theatrical runs through indie art house
                 cinema partnerships and digital platform distribution. Our tech forward
                 approach improves operational efficiency while creating new creative possibilities.
               </p>
