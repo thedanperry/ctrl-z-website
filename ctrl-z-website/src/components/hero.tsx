@@ -33,7 +33,7 @@ export default function Hero() {
               wrapped in a new
             </div>
             <div className="mb-2">
-              rev share <span className="text-outline">model</span>.
+              business <span className="text-outline">model</span>.
             </div>
           </h1>
 
