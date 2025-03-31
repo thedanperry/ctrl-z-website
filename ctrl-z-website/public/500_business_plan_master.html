@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTRL+Z Business Plan</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #00FF00;
+            --accent-color-acquisition: #ff00cc;
+            --accent-color-distribution: #9933ff;
+            --accent-color-aggregation: #ff6600;
+            --accent-color-marketing: #00cccc;
+            --font-primary: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-family: var(--font-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 3em;
+            text-transform: lowercase;
+            letter-spacing: -1px;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            color: var(--accent-color);
+        }
+        
+        h4 {
+            font-size: 1.4em;
+        }
+        
+        p {
+            margin-bottom: 1.5em;
+            font-size: 1.1em;
+        }
+        
+        /* Header */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-transform: lowercase;
+            color: var(--secondary-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        /* Content Sections */
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background-color: rgba(0, 255, 0, 0.2);
+            color: var(--secondary-color);
+            text-align: left;
+            padding: 12px;
+            font-weight: 700;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin-bottom: 1.5em;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background-color: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background-color: rgba(0, 255, 0, 0.05);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 10px;
+        }
+        
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Cover Page */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .cover h1 {
+            font-size: 5em;
+            margin-bottom: 0.2em;
+        }
+        
+        .cover p {
+            font-size: 1.5em;
+            max-width: 600px;
+        }
+        
+        /* Page Breaks for Print */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 100px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            h2 {
+                border-bottom: 1px solid #00FF00;
+            }
+            
+            h3 {
+                color: #00FF00;
+            }
+            
+            th {
+                background-color: rgba(0, 255, 0, 0.1);
+                color: black;
+            }
+            
+            td {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .highlight-box {
+                background-color: rgba(0, 255, 0, 0.05);
+                border-left: 4px solid #00FF00;
+            }
+            
+            .toc {
+                background-color: rgba(0, 255, 0, 0.05);
+            }
+            
+            .toc a {
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <section class="cover">
+            <div class="logo" style="font-size: 6em;">ctrl<span>+z</span></div>
+            <h1>Business Plan</h1>
+            <p>A hybrid film label and sales company dedicated to discovering, distributing, and producing distinctive genre films and future-forward content.</p>
+            <p style="margin-top: 100px;">March 2025</p>
+        </section>
+        
+        <!-- Table of Contents -->
+        <section class="toc page-break">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#executive-summary">1. Executive Summary</a></li>
+                <li><a href="#company-overview">2. Company Overview</a></li>
+                <li><a href="#market-analysis">3. Market Analysis</a></li>
+                <li><a href="#operations-plan">4. Operations Plan</a></li>
+                <li><a href="#marketing-strategy">5. Marketing Strategy</a></li>
+                <li><a href="#ai-agi-integration">6. AI & AGI Integration Strategy</a></li>
+                <li><a href="#financial-projections">7. Financial Projections</a></li>
+                <li><a href="#risk-management">8. Risk Management</a></li>
+                <li><a href="#future-opportunities">9. Future Opportunities</a></li>
+            </ul>
+        </section>
+        
+        <!-- Executive Summary -->
+        <section id="executive-summary" class="section page-break">
+            <h1>1. Executive Summary</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z is a hybrid film label and sales company dedicated to discovering, distributing, and producing distinctive genre films and future-forward content. With a lean $500K initial investment, our AI-enhanced operational structure creates a more equitable ecosystem for independent filmmakers while delivering compelling content to engaged audiences through both theatrical and digital channels.</p>
+            </div>
+            
+            <h2>Business Concept</h2>
+            <p>CTRL+Z addresses critical pain points in the independent film ecosystem through a unique business model that combines:</p>
+            <ul>
+                <li><strong>Vertical Integration:</strong> Operating as both a traditional film label and in-house aggregator, eliminating middleman costs</li>
+                <li><strong>AI-Enhanced Operations:</strong> Leveraging artificial intelligence to maintain a lean, efficient structure</li>
+                <li><strong>Filmmaker-Centric Approach:</strong> Offering transparent, favorable revenue sharing terms</li>
+                <li><strong>Multi-Platform Distribution:</strong> Providing comprehensive access to streaming platforms and theatrical opportunities</li>
+                <li><strong>Genre Specialization:</strong> Focusing on distinctive horror, sci-fi, thriller, and dark comedy content</li>
+            </ul>
+            
+            <h2>Market Opportunity</h2>
+            <p>CTRL+Z operates at the intersection of several favorable market trends:</p>
+            <ul>
+                <li><strong>Streaming Growth:</strong> The global streaming market is projected to reach $932 billion by 2030</li>
+                <li><strong>Genre Renaissance:</strong> Genre content consistently outperforms on digital platforms</li>
+                <li><strong>Creator Economy:</strong> Filmmakers increasingly seek direct relationships with audiences</li>
+                <li><strong>AI Transformation:</strong> Artificial intelligence is revolutionizing content creation and distribution</li>
+                <li><strong>Distribution Gaps:</strong> Traditional models fail to serve many independent filmmakers effectively</li>
+            </ul>
+            
+            <h2>Business Model</h2>
+            <p>CTRL+Z generates revenue through multiple complementary streams:</p>
+            <ul>
+                <li><strong>Platform Revenue Share:</strong> 30-50% share of streaming platform revenue</li>
+                <li><strong>Theatrical Distribution:</strong> 35% share of theatrical box office</li>
+                <li><strong>Aggregator Services:</strong> 10-15% platform fee for direct aggregation</li>
+                <li><strong>In-House Production:</strong> Ownership stake in original productions (Years 3-5)</li>
+                <li><strong>Ancillary Revenue:</strong> Merchandise, licensing, and educational opportunities</li>
+            </ul>
+            
+            <h2>Competitive Advantage</h2>
+            <p>CTRL+Z's distinctive approach creates several sustainable competitive advantages:</p>
+            <ul>
+                <li><strong>Operational Efficiency:</strong> AI-enhanced operations enable a lean structure with minimal overhead</li>
+                <li><strong>Filmmaker Value Proposition:</strong> More favorable terms than traditional distributors</li>
+                <li><strong>Vertical Integration:</strong> Combined distribution and aggregation capabilities eliminate middleman costs</li>
+                <li><strong>Technology Leadership:</strong> Early adoption of AI and preparation for AGI integration</li>
+                <li><strong>Genre Expertise:</strong> Specialized focus creates stronger curation and marketing capabilities</li>
+            </ul>
+            
+            <h2>Growth Strategy</h2>
+            <p>CTRL+Z will implement a phased growth strategy:</p>
+            <ul>
+                <li><strong>Phase 1 (Years 1-2):</strong> Establish brand, build initial library (4-10 films), develop platform relationships</li>
+                <li><strong>Phase 2 (Years 3-4):</strong> Expand content offerings (12-20 films), begin selective production, increase market share</li>
+                <li><strong>Phase 3 (Year 5+):</strong> Develop international presence, increase production slate, explore emerging media formats</li>
+            </ul>
+            
+            <h2>Financial Highlights</h2>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Year 1</th>
+                    <th>Year 3</th>
+                    <th>Year 5</th>
+                </tr>
+                <tr>
+                    <td>Revenue</td>
+                    <td>$350,000</td>
+                    <td>$1,200,000</td>
+                    <td>$2,800,000</td>
+                </tr>
+                <tr>
+                    <td>Operating Expenses</td>
+                    <td>$280,000</td>
+                    <td>$600,000</td>
+                    <td>$1,120,000</td>
+                </tr>
+                <tr>
+                    <td>Net Income</td>
+                    <td>$70,000</td>
+                    <td>$600,000</td>
+                    <td>$1,680,000</td>
+                </tr>
+                <tr>
+                    <td>ROI</td>
+                    <td>14%</td>
+                    <td>120%</td>
+                    <td>336%</td>
+                </tr>
+            </table>
+            
+            <h2>Investment Opportunity</h2>
+            <p>CTRL+Z seeks a total investment of $500,000 to fund:</p>
+            <ul>
+                <li><strong>Content Acquisition:</strong> $250,000 (50%)</li>
+                <li><strong>Technology Development:</strong> $75,000 (15%)</li>
+                <li><strong>Marketing & Brand Building:</strong> $50,000 (10%)</li>
+                <li><strong>Operations & Team:</strong> $100,000 (20%)</li>
+                <li><strong>Contingency:</strong> $25,000 (5%)</li>
+            </ul>
+            
+            <h2>Future Opportunities</h2>
+            <p>Beyond our core business model, CTRL+Z is positioned to capitalize on several emerging opportunities:</p>
+            <ul>
+                <li><strong>Generative AI Integration:</strong> Enhancing content development and marketing capabilities</li>
+                <li><strong>Virtual Production:</strong> Leveraging new technologies for cost-effective, high-quality production</li>
+                <li><strong>Creator Economy Platform:</strong> Developing direct filmmaker-to-audience relationships</li>
+                <li><strong>International Expansion:</strong> Extending our model to key global markets</li>
+                <li><strong>Interactive and Immersive Content:</strong> Exploring new narrative formats and technologies</li>
+            </ul>
+            
+            <h2>Team</h2>
+            <p>CTRL+Z was founded by industry veterans with over 20 years of experience in film and television production. The founding team brings expertise from major media companies including The Weinstein Company/Dimension Films, Paramount/Nickelodeon/MTV, and Warner Bros. Discovery, along with extensive relationships throughout the independent film ecosystem.</p>
+            
+            <h2>Contact Information</h2>
+            <p>For more information about CTRL+Z and investment opportunities, please contact:</p>
+            <p>
+                CTRL+Z, LLC<br>
+                info@ctrl-z.tv<br>
+                Los Angeles, CA
+            </p>
+        </section>
+        
+        <!-- Company Overview -->
+        <section id="company-overview" class="section page-break">
+            <h1>2. Company Overview</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z is a hybrid film label and sales company dedicated to discovering, distributing, and producing distinctive genre films and future-forward content. Our mission is to disrupt the traditional studio model by implementing a lean, AI-enhanced operational structure that benefits both filmmakers and audiences while positioning the company for success in an AGI-driven future, all with an efficient $500K initial investment.</p>
+            </div>
+            
+            <h2>Company Mission</h2>
+            <p>CTRL+Z is a hybrid film label and sales company dedicated to discovering, distributing, and producing distinctive genre films and future-forward content. Our mission is to disrupt the traditional studio model by implementing a lean, AI-enhanced operational structure that benefits both filmmakers and audiences while positioning the company for success in an AGI-driven future.</p>
+            
+            <p>We aim to create a more equitable ecosystem for independent filmmakers while delivering distinctive genre content to engaged audiences through a combination of limited theatrical releases and comprehensive digital distribution. By leveraging our unique position as both a traditional film label and in-house aggregator, we can offer better terms to filmmakers while maintaining strong profitability, even with our modest initial investment.</p>
+            
+            <h2>Founders</h2>
+            <p>CTRL+Z was founded by industry veterans with over 20 years of experience in film and television production. The founders' backgrounds include:</p>
+            <ul>
+                <li>Experience at major media companies including The Weinstein Company/Dimension Films, Paramount/Nickelodeon/MTV, and Warner Bros. Discovery</li>
+                <li>Optioning screenplays to major genre producers like Intrepid Films (Trevor Macy/Mike Flanagan)</li>
+                <li>Producing films that have premiered at festivals nationwide and secured distribution across multiple platforms</li>
+                <li>Extensive expertise in post-production and film production</li>
+                <li>Strong relationships with filmmakers, platforms, and industry stakeholders</li>
+            </ul>
+            
+            <h2>Company Values</h2>
+            <ul>
+                <li><strong>Filmmaker-Centric:</strong> Creating sustainable partnerships that prioritize creative vision and fair compensation</li>
+                <li><strong>Innovation-Driven:</strong> Leveraging technology to enhance both operational efficiency and creative possibilities</li>
+                <li><strong>Genre Excellence:</strong> Celebrating and elevating distinctive genre storytelling</li>
+                <li><strong>Audience Connection:</strong> Building direct relationships with passionate genre audiences</li>
+                <li><strong>Adaptive Evolution:</strong> Continuously evolving our approach to stay ahead of industry changes</li>
+                <li><strong>Capital Efficiency:</strong> Maximizing return on investment through lean operations and strategic resource allocation</li>
+            </ul>
+            
+            <h2>Company Structure</h2>
+            <p>CTRL+Z is structured as a Limited Liability Company (LLC) with the founders serving as managing members. The company will maintain a lean organizational structure enhanced by AI technology, with key positions including:</p>
+            
+            <h3>Core Team (Years 1-2)</h3>
+            <ul>
+                <li><strong>Managing Director (Founder):</strong> Overall company strategy, filmmaker relationships, acquisitions, and investor relations</li>
+                <li><strong>Head of Distribution & Marketing:</strong> Platform relationships, release strategy, and audience development</li>
+                <li><strong>Technology & Operations Lead:</strong> AI implementation, technical infrastructure, and operational efficiency</li>
+            </ul>
+            
+            <h3>Expanded Team (Years 3-5)</h3>
+            <ul>
+                <li><strong>Head of Acquisitions:</strong> Content evaluation and filmmaker relationships</li>
+                <li><strong>Marketing Director:</strong> Audience development and campaign management</li>
+                <li><strong>Head of Production:</strong> Oversight of in-house productions</li>
+                <li><strong>Business Development Director:</strong> New revenue streams and partnerships</li>
+            </ul>
+            
+            <h2>Target Market</h2>
+            <p>CTRL+Z focuses on the following market segments:</p>
+            
+            <h3>Primary Audience</h3>
+            <ul>
+                <li><strong>Genre Enthusiasts:</strong> Dedicated fans of horror, sci-fi, thriller, and comedy content</li>
+                <li><strong>Digital Natives:</strong> 18-45 year-olds who primarily consume content through streaming platforms</li>
+                <li><strong>Festival Followers:</strong> Audiences who track and seek out festival-recognized independent films</li>
+                <li><strong>Art House Attendees:</strong> Viewers who value theatrical experiences for distinctive content</li>
+            </ul>
+            
+            <h3>Secondary Audience</h3>
+            <ul>
+                <li><strong>Genre Curious:</strong> Mainstream viewers interested in accessible genre content</li>
+                <li><strong>International Viewers:</strong> Global audiences with interest in American independent genre films</li>
+                <li><strong>Platform Browsers:</strong> Streaming subscribers discovering content through recommendations</li>
+            </ul>
+            
+            <h2>Industry Position</h2>
+            <p>CTRL+Z positions itself in the independent film ecosystem as:</p>
+            <ul>
+                <li>A bridge between filmmakers and audiences for distinctive genre content</li>
+                <li>A technology-forward alternative to traditional distribution companies</li>
+                <li>A curator of quality content that might otherwise be overlooked</li>
+                <li>A champion for theatrical exhibition of independent films</li>
+                <li>A pioneer in implementing AI and preparing for AGI in the film industry</li>
+                <li>An aggregator to select streaming platforms, providing better exposure for indie filmmakers while improving our bottom line</li>
+                <li>A lean, capital-efficient operation that maximizes return on investment</li>
+            </ul>
+            
+            <h2>Competitive Advantages</h2>
+            <p>CTRL+Z's unique approach creates several distinct competitive advantages:</p>
+            <ul>
+                <li><strong>Vertical Integration:</strong> Combined distribution and aggregation capabilities eliminate middleman costs</li>
+                <li><strong>AI-Enhanced Operations:</strong> Technology integration creates operational efficiency competitors can't match</li>
+                <li><strong>Filmmaker-Friendly Model:</strong> Revenue sharing approach attracts quality content with minimal upfront investment</li>
+                <li><strong>Lean Structure:</strong> Minimal overhead allows for competitive filmmaker terms while maintaining profitability</li>
+                <li><strong>Future Readiness:</strong> AGI integration framework positions the company for emerging technologies</li>
+                <li><strong>Genre Specialization:</strong> Focused expertise creates stronger curation and marketing capabilities</li>
+            </ul>
+            
+            <h2>Business Model Innovation</h2>
+            <p>CTRL+Z's business model represents a significant innovation in the independent film distribution landscape:</p>
+            <ul>
+                <li><strong>Traditional Model:</strong> High overhead, minimum guarantees, limited filmmaker transparency</li>
+                <li><strong>Aggregator Model:</strong> Low overhead, flat fees or revenue share, limited marketing support</li>
+                <li><strong>CTRL+Z Model:</strong> AI-minimized overhead, revenue sharing, comprehensive marketing, platform access, and theatrical opportunities</li>
+            </ul>
+            
+            <p>This hybrid approach allows us to operate efficiently with our $500K initial investment while offering filmmakers the best aspects of both traditional distribution and modern aggregation services.</p>
+            
+            <h2>Legal and Regulatory Compliance</h2>
+            <p>CTRL+Z will maintain comprehensive legal and regulatory compliance through:</p>
+            <ul>
+                <li>Engagement with entertainment law specialists for contract development</li>
+                <li>Thorough chain of title verification for all acquired content</li>
+                <li>Comprehensive errors and omissions insurance coverage</li>
+                <li>Regular rights audits and compliance reviews</li>
+                <li>Adherence to guild and union requirements where applicable</li>
+                <li>Ethical AI implementation with transparency and accountability</li>
+                <li>Rigorous data privacy and security protocols</li>
+            </ul>
+            
+            <h2>Future Growth Trajectory</h2>
+            <p>CTRL+Z's growth strategy follows a clear, phased approach:</p>
+            <ul>
+                <li><strong>Phase 1 (Years 1-2):</strong> Establish brand, build initial library, develop platform relationships</li>
+                <li><strong>Phase 2 (Years 3-4):</strong> Expand content offerings, begin selective production, increase market share</li>
+                <li><strong>Phase 3 (Year 5+):</strong> Develop international presence, increase production slate, explore emerging media formats</li>
+            </ul>
+            
+            <p>This measured growth approach ensures sustainable expansion while maintaining our core values and operational efficiency, maximizing the impact of our initial $500K investment.</p>
+        </section>
+        
+        <!-- Market Analysis -->
+        <section id="market-analysis" class="section page-break">
+            <h1>3. Market Analysis</h1>
+            
+            <div class="highlight-box">
+                <p>The independent genre film market presents significant opportunities for CTRL+Z's innovative business model, even with our lean $500K investment approach. With the proliferation of streaming platforms, changing audience consumption habits, and the continued appeal of distinctive genre content, our vertically integrated approach addresses key pain points in the current distribution landscape while requiring minimal capital investment.</p>
+            </div>
+            
+            <!-- Content from market_analysis_revised.html -->
+            <!-- This section would contain the full content from the market analysis document -->
+        </section>
+        
+        <!-- Operations Plan -->
+        <section id="operations-plan" class="section page-break">
+            <h1>4. Operations Plan</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z's operations plan leverages AI-enhanced systems to maintain an ultra-lean, efficient structure while delivering exceptional service to filmmakers and audiences. Our bootstrap approach allows for scalable growth without proportional increases in overhead costs, maximizing our $500K initial investment.</p>
+            </div>
+            
+            <!-- Content from operations_plan_revised.html -->
+            <!-- This section would contain the full content from the operations plan document -->
+        </section>
+        
+        <!-- Marketing Strategy -->
+        <section id="marketing-strategy" class="section page-break">
+            <h1>5. Marketing Strategy</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z's marketing strategy leverages our AI-enhanced capabilities to efficiently target both filmmakers and audiences with minimal budget requirements. By building a distinctive brand identity in the genre space and utilizing data-driven approaches, we'll maximize impact while maintaining lean operational costs, making our $500K investment go further.</p>
+            </div>
+            
+            <!-- Content from marketing_strategy_revised.html -->
+            <!-- This section would contain the full content from the marketing strategy document -->
+        </section>
+        
+        <!-- AI & AGI Integration -->
+        <section id="ai-agi-integration" class="section page-break">
+            <h1>6. AI & AGI Integration Strategy</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z will implement a comprehensive AI integration strategy using a hub and spoke architecture with multiple AI platforms to enhance both operational efficiency and creative capabilities. This cost-effective approach is specifically designed to maximize our $500K investment while positioning the company to seamlessly integrate forthcoming AGI advancements as they emerge.</p>
+            </div>
+            
+            <!-- Content from ai_agi_integration_revised.html -->
+            <!-- This section would contain the full content from the AI & AGI integration document -->
+        </section>
+        
+        <!-- Financial Projections -->
+        <section id="financial-projections" class="section page-break">
+            <h1>7. Financial Projections</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z's financial model is designed for capital efficiency and sustainable growth, with a focus on maximizing the impact of our $500K initial investment. By leveraging AI-enhanced operations, revenue sharing acquisition models, and strategic resource allocation, we project profitability in Year 1 with significant growth through Year 5.</p>
+            </div>
+            
+            <!-- Content from financial_projections_revised.html -->
+            <!-- This section would contain the full content from the financial projections document -->
+        </section>
+        
+        <!-- Risk Management -->
+        <section id="risk-management" class="section page-break">
+            <h1>8. Risk Management</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z recognizes that risk management is essential for sustainable growth in the dynamic entertainment industry, especially with our lean $500K investment approach. Our strategy combines proactive identification of potential challenges with strategic mitigation plans, creating resilience while maintaining our innovative edge and preserving capital.</p>
+            </div>
+            
+            <!-- Content from risk_management_revised.html -->
+            <!-- This section would contain the full content from the risk management document -->
+        </section>
+        
+        <!-- Future Opportunities -->
+        <section id="future-opportunities" class="section page-break">
+            <h1>9. Future Opportunities</h1>
+            
+            <div class="highlight-box">
+                <p>CTRL+Z's lean $500K investment approach positions us to capitalize on emerging opportunities in the rapidly evolving entertainment landscape. By maintaining operational agility and embracing technological innovation, we can expand beyond traditional distribution into several high-potential growth areas that align with our core competencies while requiring minimal additional capital investment.</p>
+            </div>
+            
+            <!-- Content from future_opportunities_revised.html -->
+            <!-- This section would contain the full content from the future opportunities document -->
+        </section>
+        
+        <footer class="footer">
+            <p>&copy; 2025 CTRL+Z. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
