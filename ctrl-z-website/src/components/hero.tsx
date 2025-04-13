@@ -28,7 +28,7 @@ export default function Hero() {
               a film label for <span className="text-outline">indies</span>.
             </div>
             <div className="mb-2">sales, distribution,</div>
-            <div className="mb-2">aggregation, theatrical and streaming platforms</div>
+            <div className="mb-2">production, theatrical and streaming platforms</div>
             <div className="mb-2">
               wrapped in a new
             </div>
