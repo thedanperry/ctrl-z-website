@@ -43,7 +43,7 @@ export default function Hero() {
               href="#about"
               className="text-xl uppercase tracking-wide underline-hover"
             >
-              Scroll
+              More↓
             </a>
           </div>
         </div>
