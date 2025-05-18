@@ -2,100 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Parallax & Kubrik Project Bible | CTRL+Z</title>
+  <title>PARALLAX & KUBRIK | CTRL+Z PROJECT BIBLE</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- JetBrains Mono & DM Sans (as used on ctrl-z.tv) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000;
-      --surface: rgba(24,24,24,0.97);
-      --border: #242424;
       --accent: #ffe349;
-      --heading: #fff;
-      --text: #e7e7e3;
-      --muted: #ababab;
+      --text: #f8f8f8;
+      --muted: #888888;
+      --nav-size: 1.13rem;
       --maxw: 980px;
-      --font-sans: 'Montserrat', Arial, sans-serif;
-      --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
     }
     html, body {
       background: var(--bg);
-      margin: 0; padding: 0;
       color: var(--text);
-      font-family: var(--font-mono);
+      margin: 0;
+      padding: 0;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 1.09rem;
-      letter-spacing: .01em;
+      letter-spacing: .02em;
     }
     body {
-      min-height: 100vh;
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 0 4rem 0;
-      background: var(--bg);
-      /* subtle vignette effect */
-      box-shadow: 0 0 0 100vmax #000 inset;
+      padding-bottom: 3.5rem;
     }
     header {
-      text-align: left;
-      padding: 3.7rem 2.5rem 1.2rem 2.5rem;
-      border-bottom: 1.5px solid var(--border);
-      margin-bottom: 0;
-      background: none;
+      margin: 0 0 3.7rem 0;
+      padding: 4.5rem 2.2rem 2.2rem 2.2rem;
     }
-    .logo-row {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .logo-row img {
-      height: 40px; width: auto;
-      filter: brightness(1.2) grayscale(1);
-      opacity: 0.95;
-    }
-    h1 {
-      font-family: var(--font-sans);
-      color: var(--heading);
-      font-size: 2.2rem;
-      letter-spacing: 0.04em;
+    .ctrlz-logo {
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: var(--accent);
+      font-size: 2.13rem;
       font-weight: 700;
-      margin: 0.13em 0 0 0;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2em;
+      margin-left: -2px;
       text-transform: uppercase;
-      line-height: 1.1;
+      display: inline-block;
     }
     .subtitle {
-      font-family: var(--font-sans);
-      color: var(--accent);
-      font-size: 1.2rem;
-      margin-top: 0.4rem;
-      margin-bottom: 0.2rem;
-      letter-spacing: 0.12em;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.18rem;
+      letter-spacing: 0.19em;
+      font-weight: 700;
+      margin-top: 0.32em;
+      margin-bottom: 0.1em;
       text-transform: uppercase;
     }
     .meta {
       color: var(--muted);
-      font-size: 1.01rem;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.9rem;
-      margin-top: 0.15rem;
+      font-size: 0.97rem;
+      letter-spacing: 0.17em;
+      margin-top: 0.1em;
+      font-weight: 500;
     }
     nav {
+      margin-top: 2.2rem;
+      margin-bottom: 3.5rem;
+      margin-left: 0.15rem;
       display: flex;
-      gap: 2.2rem;
-      padding: 1.4rem 2.5rem 1.2rem 2.5rem;
-      border-bottom: 1px solid var(--border);
-      background: none;
+      gap: 2.8rem;
+      font-family: 'DM Sans', Arial, sans-serif;
     }
     nav a {
       color: var(--muted);
       text-decoration: none;
-      font-family: var(--font-sans);
-      font-size: 1.01rem;
+      font-size: var(--nav-size);
       font-weight: 700;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      padding: 0.12em 0.1em;
       border-bottom: 2.5px solid transparent;
-      transition: color 0.18s, border-bottom 0.18s;
+      padding-bottom: 0.19em;
+      transition: color 0.17s, border-bottom 0.17s;
     }
     nav a:hover, nav a.active {
       color: var(--accent);
@@ -103,91 +86,81 @@
       background: none;
     }
     main {
-      margin: 0 auto;
-      max-width: var(--maxw);
-      padding: 1.7rem 2.7rem 2.5rem 2.7rem;
-    }
-    section {
-      margin: 0 0 3.7rem 0;
-      padding: 0 0 0 0;
-      background: none;
+      margin: 0;
+      padding: 0 2.2rem 0 2.2rem;
     }
     .section-label {
+      font-family: 'DM Sans', Arial, sans-serif;
       color: var(--accent);
-      font-family: var(--font-sans);
-      font-size: 1.04rem;
-      letter-spacing: 0.12em;
+      font-size: 1.05rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 0.8rem;
-      margin-top: 2.7rem;
       font-weight: 700;
-      display: block;
-      border-left: 4.5px solid var(--accent);
-      padding-left: 1.1em;
-      line-height: 1.3;
+      margin-top: 2.5rem;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      border-left: 5px solid var(--accent);
+      padding-left: 1.25em;
+      display: inline-block;
     }
     .section-title {
-      font-family: var(--font-sans);
-      color: var(--heading);
-      font-size: 1.52rem;
+      color: var(--text);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 2.01rem;
       font-weight: 700;
-      letter-spacing: 0.07em;
-      margin: 0.1em 0 0.75em 0;
       text-transform: uppercase;
-      line-height: 1.15;
+      letter-spacing: 0.14em;
+      margin: 0.01em 0 1.4em 0;
+      line-height: 1.13;
+      margin-left: 0;
     }
     .section-body {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 2.2rem 2.1rem 2rem 2.1rem;
-      margin-bottom: 0.5rem;
-      box-shadow: 0 3px 24px 0 rgba(0,0,0,0.15);
-      border: 1px solid var(--border);
-      font-size: 1.09rem;
+      margin-left: 0.1em;
+      max-width: 840px;
+      margin-bottom: 2.6em;
+      font-size: 1.07rem;
       line-height: 1.73;
       color: var(--text);
+      letter-spacing: 0.015em;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+      text-transform: none;
     }
     h3, h4 {
       color: var(--accent);
-      font-family: var(--font-sans);
-      font-size: 1.07rem;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 1.14rem;
       font-weight: 700;
       text-transform: uppercase;
-      margin-top: 2em;
-      margin-bottom: 0.4em;
-      letter-spacing: 0.09em;
+      margin-top: 2.1em;
+      margin-bottom: 0.5em;
+      letter-spacing: 0.14em;
     }
     ul, ol {
+      margin-left: 2.1em;
       margin-bottom: 1.1em;
-      margin-left: 1.1em;
     }
     li {
-      margin-bottom: 0.39em;
-    }
-    pre, code {
-      font-family: var(--font-mono);
-      font-size: 1.01em;
-      background: #111;
-      color: var(--accent);
-      border-radius: 6px;
-      padding: 0.18em 0.7em;
+      margin-bottom: 0.36em;
+      font-size: 1.06rem;
+      letter-spacing: 0.01em;
     }
     blockquote {
-      border-left: 5px solid var(--accent);
-      margin: 1.2em 0;
-      padding-left: 1.3em;
+      border-left: 4.5px solid var(--accent);
+      margin: 1.25em 0;
+      padding-left: 1.25em;
       color: var(--muted);
-      background: #181818e6;
-      border-radius: 0 12px 12px 0;
+      background: #181818;
+      border-radius: 0 10px 10px 0;
       font-style: italic;
       font-size: 1.01rem;
     }
     .footer {
-      margin-top: 4.7em;
+      margin-top: 4.2em;
       color: var(--muted);
       text-align: left;
       font-size: 0.98rem;
-      padding: 0 2.5rem;
+      padding: 0 2.2rem;
     }
     @media (max-width: 900px) {
       body, main { padding-left: 0; padding-right: 0; }
@@ -195,86 +168,73 @@
       main { padding-left: 1rem; padding-right: 1rem; }
     }
     @media (max-width: 600px) {
-      .section-body { padding: 1.1rem 0.5rem 1.1rem 0.7rem; }
-      .section-title { font-size: 1.07rem; }
-      .subtitle { font-size: 1.01rem;}
+      .section-body { font-size: 1rem; }
+      .section-title { font-size: 1.08rem; }
+      .subtitle { font-size: 1.02rem;}
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-row">
-      <img src="https://www.ctrl-z.tv/logo.svg" alt="CTRL+Z" onerror="this.style.display='none'">
-      <span>
-        <h1>Parallax & Kubrik</h1>
-        <div class="subtitle">Project Bible</div>
-        <div class="meta">Version 1.0 &mdash; May 15, 2025 &mdash; Prepared by Manus (AI Agent)</div>
-      </span>
-    </div>
+    <span class="ctrlz-logo">CTRL+Z</span>
+    <div class="subtitle">PARALLAX & KUBRIK &nbsp;|&nbsp; PROJECT BIBLE</div>
+    <div class="meta">VERSION 1.0 &mdash; MAY 15, 2025 &mdash; PREPARED BY MANUS (AI AGENT)</div>
   </header>
   <nav>
-    <a href="#setup">Setup</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#modules">Kubrik Modules</a>
-    <a href="#strategy">Strategy</a>
-    <a href="#appendices">Appendices</a>
+    <a href="#setup">SETUP</a>
+    <a href="#roadmap">ROADMAP</a>
+    <a href="#modules">MODULES</a>
+    <a href="#strategy">STRATEGY</a>
+    <a href="#appendices">APPENDICES</a>
   </nav>
   <main>
     <!-- SECTION 1 -->
     <section id="setup">
-      <span class="section-label">Part 1</span>
-      <div class="section-title">Introduction & Foundational Setup</div>
+      <span class="section-label">PART 1</span>
+      <div class="section-title">INTRODUCTION & FOUNDATIONAL SETUP</div>
       <div class="section-body">
-        <!-- Paste your full Section 1 content here (with headings, lists, etc.) -->
-        <!-- EXAMPLE BEGIN -->
-        <h3>1.1 Project Vision & Goals (Parallax & Kubrik)</h3>
-        <ul>
-          <li><strong>Overall Vision:</strong> To create Kubrik, a sophisticated AI film director capable of autonomously generating complete, high-quality horror films from user prompts, and to launch Parallax, a user-facing MVP for personalized AI horror shorts.</li>
-          <li><strong>Parallax Goals:</strong> Fast, engaging B2C MVP, selfie-to-horror-face-swap, fun experience, gather feedback, validate tech.</li>
-          <li><strong>Kubrik Goals:</strong> Multi-phase, modular build toward full autonomy, with creative human oversight in early versions, progressing to prompt-to-movie generation.</li>
-          <li><strong>Guiding Principles:</strong> User-centric, modular, iterative, ethical, scalable.</li>
-        </ul>
-        <!-- Now paste the rest of your actual content below! -->
+        <!-- Paste your full Section 1 content here -->
       </div>
     </section>
     <!-- SECTION 2 -->
     <section id="roadmap">
-      <span class="section-label">Part 2</span>
-      <div class="section-title">Integrated Development Roadmap &mdash; Phased Execution</div>
+      <span class="section-label">PART 2</span>
+      <div class="section-title">INTEGRATED DEVELOPMENT ROADMAP &mdash; PHASED EXECUTION</div>
       <div class="section-body">
         <!-- Paste your full Section 2 content here -->
       </div>
     </section>
     <!-- SECTION 3 -->
     <section id="modules">
-      <span class="section-label">Part 3</span>
-      <div class="section-title">Kubrik Core Modules &mdash; Detailed Guides</div>
+      <span class="section-label">PART 3</span>
+      <div class="section-title">KUBRIK CORE MODULES &mdash; DETAILED GUIDES</div>
       <div class="section-body">
         <!-- Paste your full Section 3 content here -->
       </div>
     </section>
     <!-- SECTION 4 -->
     <section id="strategy">
-      <span class="section-label">Part 4</span>
-      <div class="section-title">Strategic Considerations & Future Outlook</div>
+      <span class="section-label">PART 4</span>
+      <div class="section-title">STRATEGIC CONSIDERATIONS & FUTURE OUTLOOK</div>
       <div class="section-body">
         <!-- Paste your full Section 4 content here -->
       </div>
     </section>
     <!-- SECTION 5 -->
     <section id="appendices">
-      <span class="section-label">Part 5</span>
-      <div class="section-title">Appendices (As Needed)</div>
+      <span class="section-label">PART 5</span>
+      <div class="section-title">APPENDICES (AS NEEDED)</div>
       <div class="section-body">
         <!-- Paste your appendices or additional content here -->
       </div>
     </section>
   </main>
   <footer class="footer">
-    &copy; 2025 <a href="https://www.ctrl-z.tv" style="color:var(--accent);text-decoration:none;font-weight:700;">CTRL+Z</a> &mdash; All Rights Reserved.<br>
+    &copy; 2025 <span style="color:var(--accent);font-weight:700;">CTRL+Z</span> &mdash; ALL RIGHTS RESERVED.<br>
     <span class="muted">For inquiries, contact <a href="mailto:info@ctrl-z.tv" style="color:var(--accent);">info@ctrl-z.tv</a></span>
   </footer>
 </body>
 </html>
+
 
 
