@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Project Bible: Parallax & Kubrik - The Comprehensive Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #ffd700;
+      --bg: #0d0d0d;
+      --fg: #ededed;
+      --muted: #999;
+      --border: #222;
+      --heading-font: 'Montserrat', 'Arial', sans-serif;
+      --body-font: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--body-font);
+      line-height: 1.6;
+    }
+    body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem 1rem;
+    }
+    header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    h1, h2, h3, h4 {
+      color: var(--accent);
+      font-family: var(--heading-font);
+      font-weight: 700;
+      margin-bottom: 0.2em;
+      letter-spacing: 0.5px;
+    }
+    h1 { font-size: 2.6rem; margin-top: 0.2em; }
+    h2 { font-size: 1.6rem; margin-top: 2em; border-bottom: 2px solid var(--border);}
+    h3 { font-size: 1.2rem; margin-top: 1.8em;}
+    h4 { font-size: 1rem; margin-top: 1.4em;}
+    p, ul, ol, pre, blockquote {
+      font-size: 1rem;
+      margin-bottom: 1em;
+    }
+    ul, ol {
+      padding-left: 2em;
+      margin-bottom: 1em;
+    }
+    li { margin-bottom: 0.4em; }
+    code, pre {
+      background: #1a1a1a;
+      color: var(--accent);
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .muted { color: var(--muted); }
+    .accent { color: var(--accent); }
+    .section-title {
+      font-size: 1.1rem;
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding-left: 0.7em;
+      margin-top: 2.5em;
+      margin-bottom: 1.5em;
+    }
+    .toc {
+      background: #191919;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4em 1.5em;
+      margin-bottom: 2.5em;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.22);
+    }
+    .toc ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+    .toc ul li {
+      margin-bottom: 0.6em;
+      line-height: 1.6;
+    }
+    a, a:visited {
+      color: var(--accent);
+      text-decoration: underline dotted;
+      transition: color 0.2s;
+    }
+    a:hover { color: #fff38a; }
+    blockquote {
+      border-left: 4px solid var(--accent);
+      margin: 1em 0;
+      padding-left: 1.2em;
+      color: var(--muted);
+      font-style: italic;
+      background: #141414;
+      border-radius: 0 10px 10px 0;
+    }
+    .footer {
+      margin-top: 5em;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.98rem;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 2rem;}
+      body { padding: 1.2rem 0.4rem 2.5rem 0.4rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Project Bible: Parallax & Kubrik</h1>
+    <div class="muted" style="font-size:1.1rem; margin-bottom: 0.2em;">The Comprehensive Guide</div>
+    <div class="muted" style="font-size:0.97rem;">Version 1.0 &middot; May 15, 2025 &middot; Prepared by Manus (AI Agent)</div>
+  </header>
+
+  <section class="toc">
+    <h2 style="margin-top:0;">Table of Contents</h2>
+    <ul>
+      <li>1. Introduction &amp; Foundational Setup</li>
+      <li>2. Integrated Development Roadmap</li>
+      <li>3. Kubrik Core Modules - Detailed Guides</li>
+      <li>4. Strategic Considerations &amp; Future Outlook</li>
+      <li>5. Appendices (As Needed)</li>
+    </ul>
+  </section>
+
+  <div class="section-title">Part 1: Introduction &amp; Foundational Setup</div>
+  <h3>1.1 Project Vision &amp; Goals (Parallax &amp; Kubrik)</h3>
+  <ul>
+    <li><b>Overall Vision:</b> Build <span class="accent">Kubrik</span>, a sophisticated AI film director, able to autonomously create distinctive horror films, and launch <span class="accent">Parallax</span> as the user-facing MVP to test and fund the vision.</li>
+    <li><b>Parallax Goals:</b> Launch a B2C web app for users to swap their faces into AI-generated horror shorts, providing feedback and validating technical/market fit.</li>
+    <li><b>Kubrik Goals:</b> Long-term phased development toward a fully autonomous AI director capable of interpreting prompts, scriptwriting, visual design, editing, and sound.</li>
+    <li><b>Guiding Principles:</b> User-centric MVP, modular AI system, rapid iteration, scalable design, responsible AI ethics, and creative human oversight.</li>
+  </ul>
+
+  <h3>1.2 Project Management Tool Setup (ClickUp)</h3>
+  <ul>
+    <li><b>Why ClickUp?</b> Customizable, scalable, future-proof for team growth, offers a generous free tier, and suitable for non-technical founders.</li>
+    <li><b>Setup Steps:</b> Create "Parallax MVP" and "Kubrik R&D" spaces. Use lists, folders, and docs for all modules, experiments, and documentation. Adopt templates and link tasks for project clarity.</li>
+  </ul>
+
+  <h3>1.3 Initial Resource &amp; Tool Assessment</h3>
+  <ul>
+    <li><b>Core Skills:</b> Film/video editing, creative direction, project management, basic CS understanding, ability to guide AI tools and assistants.</li>
+    <li><b>Key Tools:</b> ClickUp, Runway Gen-2, Pika Labs, CapCut, Magic Hour, Carrd/Typedream, Google Drive, Airtable/Notion, ElevenLabs, GA4, etc.</li>
+    <li><b>Budget:</b> Ultra-lean. <$100/month first year (max free tiers, minimal subscriptions).</li>
+  </ul>
+
+  <div class="section-title">Part 2: Integrated Development Roadmap - Phased Execution</div>
+  <p><b>Chronological plan for Parallax MVP launch and Kubrik R&amp;D:</b></p>
+  <ol>
+    <li><b>Phase 1:</b> Parallax MVP (face-swapping horror shorts) - validate, gather feedback, build credibility.</li>
+    <li><b>Phase 2:</b> Iterate on Parallax, begin Kubrik core module experiments (script generation, visual prompts, asset mgmt).</li>
+    <li><b>Phase 3:</b> Deeper Kubrik prototyping, integrate with Parallax, focus on iterative video generation and curation.</li>
+    <li><b>Phase 4:</b> Advanced Kubrik assembly/editing (HAL), tone enforcement, first end-to-end Kubrik short using the full workflow.</li>
+    <li><b>Phase 5:</b> Strategic review and alpha launch of Kubrik modules for wider testing/funding push.</li>
+  </ol>
+
+  <div class="section-title">Part 3: Kubrik Core Modules - Detailed Guides</div>
+  <ul>
+    <li><b>Iris:</b> Prompt engineering &amp; script generation (LLMs, style guide integration)</li>
+    <li><b>Monolith:</b> Visual storytelling, translating scripts to AI video prompts</li>
+    <li><b>Iterative Video Generation &amp; Curation:</b> Batch generation, curation/rating, iterative improvement</li>
+    <li><b>Intelligent Asset Management:</b> Airtable/Notion/ClickUp, detailed metadata &amp; tagging</li>
+    <li><b>HAL:</b> Automated/manual assembly, editing rules, FFmpeg/EDL experiments</li>
+    <li><b>Kubrik Personality:</b> Tone enforcement framework, comprehensive style guide, feedback loops</li>
+  </ul>
+
+  <div class="section-title">Part 4: Strategic Considerations &amp; Future Outlook</div>
+  <ul>
+    <li><b>Content Ownership &amp; Legal:</b> Clear copyright for templates, terms of service for user uploads, careful with AI tool TOS and data use.</li>
+    <li><b>Monetization:</b> Start free, move to freemium/subscription. Explore B2B SaaS/licensing and asset marketplaces for Kubrik.</li>
+    <li><b>Scalability:</b> Modular, swappable architecture; continuous research &amp; integration of new tools; design for future autonomy.</li>
+    <li><b>Team &amp; Funding:</b> Identify future roles (AI/ML engineers, devs, UX, prompt engineers, BD/sales). Use Parallax/Kubrik v0.x as investor pitch assets.</li>
+  </ul>
+
+  <div class="section-title">Part 5: Appendices (As Needed)</div>
+  <ul>
+    <li>Glossary of AI &amp; Film Terms</li>
+    <li>AI Tool Comparison Tables</li>
+    <li>Sample Prompts</li>
+    <li>Kubrik Style Guide (Full Version)</li>
+  </ul>
+
+  <footer class="footer">
+    &copy; 2025 CTRL+Z &middot; <a href="https://www.ctrl-z.tv">ctrl-z.tv</a> &middot; All rights reserved.<br>
+    <span class="muted">For questions or access to full documentation, contact <a href="mailto:info@ctrl-z.tv">info@ctrl-z.tv</a></span>
+  </footer>
+</body>
+</html>
