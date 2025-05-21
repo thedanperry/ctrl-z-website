@@ -52,20 +52,24 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const maxPerScroll = Math.min(50, Math.floor(scrollY / 20));
+      const spawnRate = Math.floor(scrollY / 200);
+      const maxPerScroll = Math.min(30, spawnRate - totalGenerated);
 
       for (let i = 0; i < maxPerScroll; i++) {
         const logo = document.createElement("img");
         logo.src = "/monolith_logo_original_ratio_highres.png";
         logo.className = "logo-copy";
 
-        const minSize = 10;
-        const maxSize = Math.max(20, 100 - scrollY * 0.01); // Shrinks over time
-        const size = Math.random() * (maxSize - minSize) + minSize;
+        // Size decreases gradually with scroll depth
+        const baseSize = 200;
+        const minSize = 8;
+        const size = Math.max(minSize, baseSize - scrollY * 0.1);
         logo.style.width = `${size}px`;
 
+        // Scatter more narrowly as scroll increases
+        const scatterRange = Math.max(50, 400 - scrollY * 0.05);
         const x = Math.random() * window.innerWidth;
-        const y = scrollY + Math.random() * window.innerHeight * 2;
+        const y = scrollY + Math.random() * scatterRange;
         logo.style.left = `${x}px`;
         logo.style.top = `${y}px`;
         logo.style.opacity = "1";
