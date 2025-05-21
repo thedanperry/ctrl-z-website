@@ -80,18 +80,23 @@
   </div>
 
   <script>
-    const logoSection = document.getElementById("logoSection");
-    const revealText = document.getElementById("revealText");
-    const revealSection = document.getElementById("revealSection");
+    document.addEventListener("DOMContentLoaded", () => {
+      const logoSection = document.getElementById("logoSection");
+      const revealText = document.getElementById("revealText");
+      const revealSection = document.getElementById("revealSection");
 
-    window.addEventListener("scroll", () => {
-      const sectionTop = revealSection.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+      const checkScroll = () => {
+        const sectionTop = revealSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
 
-      if (sectionTop < windowHeight * 0.75) {
-        logoSection.classList.add("hidden");
-        revealText.classList.add("visible");
-      }
+        if (sectionTop < windowHeight * 0.75) {
+          logoSection.classList.add("hidden");
+          revealText.classList.add("visible");
+        }
+      };
+
+      window.addEventListener("scroll", checkScroll);
+      checkScroll(); // check on load in case already scrolled
     });
   </script>
 
