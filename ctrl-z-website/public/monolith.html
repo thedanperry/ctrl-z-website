@@ -29,12 +29,11 @@
     .trail {
       position: relative;
       width: 100%;
-      height: 5000px;
+      height: 20000px;
     }
 
     .trail .logo-copy {
       position: absolute;
-      opacity: 0.04;
       pointer-events: none;
     }
   </style>
@@ -42,7 +41,7 @@
 <body>
 
   <div class="logo-container">
-    <img src="monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
+    <img src="/monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
   </div>
 
   <div class="trail" id="trail"></div>
@@ -53,21 +52,21 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const numberToAdd = Math.min(10, Math.floor(scrollY / 100) - totalGenerated);
+      const numberToAdd = Math.min(20, Math.floor(scrollY / 50) - totalGenerated);
 
       for (let i = 0; i < numberToAdd; i++) {
         const logo = document.createElement("img");
-        logo.src = "monolith_logo_original_ratio_highres.png";
+        logo.src = "/monolith_logo_original_ratio_highres.png";
         logo.className = "logo-copy";
 
-        const size = Math.random() * 100 + 20;
+        const size = Math.random() * 100 + 40;
         logo.style.width = `${size}px`;
 
         const x = Math.random() * window.innerWidth;
-        const y = Math.random() * (document.body.scrollHeight - window.innerHeight);
+        const y = scrollY + window.innerHeight + Math.random() * 1000;
         logo.style.left = `${x}px`;
         logo.style.top = `${y}px`;
-        logo.style.opacity = `${Math.random() * 0.1 + 0.02}`;
+        logo.style.opacity = "1";
 
         trailContainer.appendChild(logo);
         totalGenerated++;
