@@ -6,12 +6,12 @@
   <title>MONOLITH</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
+    html, body {
       height: 100%;
       background-color: black;
       overflow-x: hidden;
-      color: white;
       font-family: sans-serif;
+      color: white;
     }
 
     .fade-container {
@@ -36,20 +36,20 @@
 
     .reveal-section {
       position: relative;
-      height: 200vh;
-      background: black;
+      height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      padding-top: 120vh;
+      align-items: center;
+      text-align: center;
+      background: black;
+      z-index: 0;
     }
 
     .reveal-text {
       font-size: 2rem;
       opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 2s ease, transform 2s ease;
-      text-align: center;
+      transform: translateY(40px);
+      transition: opacity 2.5s ease, transform 2.5s ease;
       max-width: 80%;
     }
 
@@ -77,12 +77,13 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
+      const triggerPoint = window.innerHeight * 0.3;
 
-      if (scrollY > window.innerHeight / 2) {
+      if (scrollY > triggerPoint) {
         logoSection.classList.add("hidden");
       }
 
-      if (scrollY > window.innerHeight * 0.9) {
+      if (scrollY > triggerPoint + 100) {
         revealText.classList.add("visible");
       }
     });
