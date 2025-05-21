@@ -22,42 +22,56 @@
     }
 
     .logo {
-      max-width: 300px;
-      width: 40vw;
+      max-width: 600px;
+      width: 60vw;
     }
 
     .trail {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 5000px;
     }
 
     .trail .logo-copy {
-      margin-top: 100px;
-      opacity: 0.06;
+      position: absolute;
+      opacity: 0.04;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
 
   <div class="logo-container">
-    <img src="monolith_logo_highres.png" alt="Monolith Logo" class="logo">
+    <img src="monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
   </div>
 
   <div class="trail" id="trail"></div>
 
   <script>
     const trailContainer = document.getElementById("trail");
+    let totalGenerated = 0;
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const logoSize = Math.max(30, 300 - scrollY * 0.3);
-      const logo = document.createElement("img");
-      logo.src = "monolith_logo_highres.png";
-      logo.className = "logo-copy";
-      logo.style.width = `${logoSize}px`;
-      logo.style.opacity = Math.max(0.03, 0.2 - scrollY * 0.0002);
-      trailContainer.appendChild(logo);
+      const numberToAdd = Math.min(10, Math.floor(scrollY / 100) - totalGenerated);
+
+      for (let i = 0; i < numberToAdd; i++) {
+        const logo = document.createElement("img");
+        logo.src = "monolith_logo_original_ratio_highres.png";
+        logo.className = "logo-copy";
+
+        const size = Math.random() * 100 + 20;
+        logo.style.width = `${size}px`;
+
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * (document.body.scrollHeight - window.innerHeight);
+        logo.style.left = `${x}px`;
+        logo.style.top = `${y}px`;
+        logo.style.opacity = `${Math.random() * 0.1 + 0.02}`;
+
+        trailContainer.appendChild(logo);
+        totalGenerated++;
+      }
     });
   </script>
 </body>
