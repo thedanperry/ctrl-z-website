@@ -8,91 +8,85 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       height: 100%;
+      background-color: black;
       overflow-x: hidden;
-      font-family: sans-serif;
-      background: black;
       color: white;
+      font-family: sans-serif;
     }
 
-    .section {
-      position: relative;
-      height: 100vh;
-      width: 100vw;
+    .fade-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .section .content {
-      text-align: center;
-      z-index: 2;
-    }
-
-    .section::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
+      height: 100vh;
+      position: relative;
+      opacity: 1;
+      transition: opacity 2s ease-in-out;
       z-index: 1;
     }
 
-    .parallax-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
+    .fade-container.hidden {
+      opacity: 0;
     }
 
-    h1 {
-      font-size: 4rem;
-      letter-spacing: 4px;
+    .logo {
+      width: 300px;
+      height: auto;
     }
 
-    p {
-      font-size: 1.2rem;
-      opacity: 0.8;
+    .reveal-section {
+      position: relative;
+      height: 200vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 120vh;
+    }
+
+    .reveal-text {
+      font-size: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 2s ease, transform 2s ease;
+      text-align: center;
+      max-width: 80%;
+    }
+
+    .reveal-text.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <div class="section" style="background-image: url('/monolith_logo_original_ratio_highres.png');">
-    <div class="content">
-      <h1>MONOLITH</h1>
-      <p>The future of cinema is emerging...</p>
+  <div class="fade-container" id="logoSection">
+    <img src="/monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
+  </div>
+
+  <div class="reveal-section">
+    <div class="reveal-text" id="revealText">
+      <p>There is no user. There is no author. There is only the signal.</p>
     </div>
   </div>
 
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1542751110-97427bbecf20?fit=crop&w=1600&q=80');">
-    <div class="content">
-      <h1>MYTH</h1>
-      <p>Stories that linger beyond logic</p>
-    </div>
-  </div>
+  <script>
+    const logoSection = document.getElementById("logoSection");
+    const revealText = document.getElementById("revealText");
 
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68?fit=crop&w=1600&q=80');">
-    <div class="content">
-      <h1>MACHINE</h1>
-      <p>Crafted with intelligence, not imitation</p>
-    </div>
-  </div>
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
 
-  <div class="section" style="background-image: url('https://images.unsplash.com/photo-1508610048659-a06a20c7ba9c?fit=crop&w=1600&q=80');">
-    <div class="content">
-      <h1>MONOLITH</h1>
-      <p>Not a tool. A vision.</p>
-    </div>
-  </div>
+      if (scrollY > window.innerHeight / 2) {
+        logoSection.classList.add("hidden");
+      }
+
+      if (scrollY > window.innerHeight * 0.9) {
+        revealText.classList.add("visible");
+      }
+    });
+  </script>
 
 </body>
 </html>
