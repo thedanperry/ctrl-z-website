@@ -5,100 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MONOLITH</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      background-color: black;
-      overflow-x: hidden;
-      font-family: sans-serif;
-      color: white;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .fade-container {
+    html, body {
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      position: relative;
-      opacity: 1;
-      transition: opacity 2s ease-in-out;
-      z-index: 1;
-    }
-
-    .fade-container.hidden {
-      opacity: 0;
     }
 
     .logo {
       width: 300px;
       height: auto;
-    }
-
-    .spacer {
-      height: 150vh;
-      width: 100%;
-      background: black;
-    }
-
-    .reveal-section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: black;
-      z-index: 0;
-    }
-
-    .reveal-text {
-      font-size: 2rem;
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 2.5s ease, transform 2.5s ease;
-      max-width: 80%;
+      animation: fadeIn 4s ease-in-out forwards;
     }
 
-    .reveal-text.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .flicker {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      mix-blend-mode: screen;
+      opacity: 0.07;
+      animation: flicker 0.2s infinite;
+      z-index: 10;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 0.07; }
+      50% { opacity: 0.02; }
     }
   </style>
 </head>
 <body>
-
-  <div class="fade-container" id="logoSection">
+  <div class="container">
     <img src="/monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
+    <div class="flicker"></div>
   </div>
 
-  <div class="spacer"></div>
-
-  <div class="reveal-section" id="revealSection">
-    <div class="reveal-text" id="revealText">
-      <p>There is no user. There is no author. There is only the signal.</p>
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const logoSection = document.getElementById("logoSection");
-      const revealText = document.getElementById("revealText");
-      const revealSection = document.getElementById("revealSection");
-
-      const checkScroll = () => {
-        const sectionTop = revealSection.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (sectionTop < windowHeight * 0.75) {
-          logoSection.classList.add("hidden");
-          revealText.classList.add("visible");
-        }
-      };
-
-      window.addEventListener("scroll", checkScroll);
-      checkScroll(); // check on load in case already scrolled
-    });
-  </script>
-
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/02/audio_c14bceede8.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
