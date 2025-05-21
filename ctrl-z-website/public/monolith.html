@@ -29,7 +29,7 @@
     .trail {
       position: relative;
       width: 100%;
-      height: 20000px;
+      height: 40000px; /* Extended canvas for longer scroll */
     }
 
     .trail .logo-copy {
@@ -52,18 +52,20 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const numberToAdd = Math.min(20, Math.floor(scrollY / 50) - totalGenerated);
+      const maxPerScroll = Math.min(50, Math.floor(scrollY / 20));
 
-      for (let i = 0; i < numberToAdd; i++) {
+      for (let i = 0; i < maxPerScroll; i++) {
         const logo = document.createElement("img");
         logo.src = "/monolith_logo_original_ratio_highres.png";
         logo.className = "logo-copy";
 
-        const size = Math.random() * 100 + 40;
+        const minSize = 10;
+        const maxSize = Math.max(20, 100 - scrollY * 0.01); // Shrinks over time
+        const size = Math.random() * (maxSize - minSize) + minSize;
         logo.style.width = `${size}px`;
 
         const x = Math.random() * window.innerWidth;
-        const y = scrollY + window.innerHeight + Math.random() * 1000;
+        const y = scrollY + Math.random() * window.innerHeight * 2;
         logo.style.left = `${x}px`;
         logo.style.top = `${y}px`;
         logo.style.opacity = "1";
