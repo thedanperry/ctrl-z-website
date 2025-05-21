@@ -34,6 +34,12 @@
       height: auto;
     }
 
+    .spacer {
+      height: 150vh;
+      width: 100%;
+      background: black;
+    }
+
     .reveal-section {
       position: relative;
       height: 100vh;
@@ -65,7 +71,9 @@
     <img src="/monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
   </div>
 
-  <div class="reveal-section">
+  <div class="spacer"></div>
+
+  <div class="reveal-section" id="revealSection">
     <div class="reveal-text" id="revealText">
       <p>There is no user. There is no author. There is only the signal.</p>
     </div>
@@ -74,16 +82,14 @@
   <script>
     const logoSection = document.getElementById("logoSection");
     const revealText = document.getElementById("revealText");
+    const revealSection = document.getElementById("revealSection");
 
     window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      const triggerPoint = window.innerHeight * 0.3;
+      const sectionTop = revealSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
 
-      if (scrollY > triggerPoint) {
+      if (sectionTop < windowHeight * 0.75) {
         logoSection.classList.add("hidden");
-      }
-
-      if (scrollY > triggerPoint + 100) {
         revealText.classList.add("visible");
       }
     });
