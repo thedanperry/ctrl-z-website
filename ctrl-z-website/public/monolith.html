@@ -29,7 +29,7 @@
     .trail {
       position: relative;
       width: 100%;
-      height: 8000px;
+      height: 12000px;
     }
 
     .grid-image {
@@ -37,15 +37,15 @@
       left: 50%;
       transform: translateX(-50%);
       display: grid;
-      gap: 2px;
+      gap: 0;
       opacity: 0;
       transition: opacity 1s ease-in-out;
       justify-content: center;
     }
 
     .logo-icon {
-      width: 80px;
-      height: auto;
+      width: 12px;
+      height: 20px;
     }
   </style>
 </head>
@@ -56,83 +56,20 @@
 
   <div class="trail">
     <div class="grid-image" id="frame1" style="top: 1200px;"></div>
-    <div class="grid-image" id="frame2" style="top: 2800px;"></div>
-    <div class="grid-image" id="frame3" style="top: 4400px;"></div>
+    <div class="grid-image" id="frame2" style="top: 3000px;"></div>
+    <div class="grid-image" id="frame3" style="top: 4800px;"></div>
   </div>
 
   <script>
     const frames = {
-      frame1: [ // brain (20x20)
-        "00000000011110000000",
-        "00000011111111100000",
-        "00001111111111111000",
-        "00011111111111111100",
-        "00111111111111111100",
-        "00111111111111111000",
-        "00111111111111110000",
-        "00111111111111100000",
-        "00011111111110000000",
-        "00001111111000000000",
-        "00000111100000000000",
-        "00000111000000000000",
-        "00001111100000000000",
-        "00011111110000000000",
-        "00111111111000000000",
-        "00111111110000000000",
-        "00011111100000000000",
-        "00001110000000000000",
-        "00000100000000000000",
-        "00000000000000000000"
-      ],
-      frame2: [ // camera (20x20)
-        "00000000000000000000",
-        "00000001111100000000",
-        "00000111111110000000",
-        "00011111111111000000",
-        "00111001100111100000",
-        "01110001100011110000",
-        "01110001100011110000",
-        "01110001100011110000",
-        "00111001100111100000",
-        "00011111111111000000",
-        "00001111111110000000",
-        "00000111111100000000",
-        "00000001111100000000",
-        "00000000000000000000",
-        "00000000111100000000",
-        "00000000100100000000",
-        "00000000100100000000",
-        "00000000111100000000",
-        "00000000000000000000",
-        "00000000000000000000"
-      ],
-      frame3: [ // skull (20x20)
-        "00000011111100000000",
-        "00001111111111000000",
-        "00011111111111100000",
-        "00111110000111110000",
-        "01111100000011111000",
-        "01111000000001111000",
-        "11110001111000111100",
-        "11100011111110001110",
-        "11100011111110001110",
-        "11100000000000001110",
-        "01110000000000011100",
-        "00111000000000111000",
-        "00011100000001110000",
-        "00001110000011100000",
-        "00000111111111000000",
-        "00000011111110000000",
-        "00000000111100000000",
-        "00000000000000000000",
-        "00000000000000000000",
-        "00000000000000000000"
-      ]
+      frame1: [REPLACE_WITH_BRAIN],
+      frame2: [REPLACE_WITH_CAMERA],
+      frame3: [REPLACE_WITH_SKULL]
     };
 
     function renderFrame(id, data) {
       const container = document.getElementById(id);
-      container.style.gridTemplateColumns = `repeat(${data[0].length}, 82px)`;
+      container.style.gridTemplateColumns = `repeat(${data[0].length}, 12px)`;
       container.innerHTML = "";
       for (const row of data) {
         for (const cell of row) {
@@ -154,9 +91,9 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      document.getElementById("frame1").style.opacity = (scrollY > 1000 && scrollY < 2000) ? "1" : "0";
-      document.getElementById("frame2").style.opacity = (scrollY > 2600 && scrollY < 3600) ? "1" : "0";
-      document.getElementById("frame3").style.opacity = (scrollY > 4200 && scrollY < 5200) ? "1" : "0";
+      document.getElementById("frame1").style.opacity = (scrollY > 1000 && scrollY < 2400) ? "1" : "0";
+      document.getElementById("frame2").style.opacity = (scrollY > 2800 && scrollY < 4200) ? "1" : "0";
+      document.getElementById("frame3").style.opacity = (scrollY > 4600 && scrollY < 6000) ? "1" : "0";
     });
   </script>
 </body>
