@@ -30,12 +30,6 @@
     .logo {
       width: 300px;
       height: auto;
-      opacity: 0;
-      animation: fadeIn 4s ease-in-out forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
     }
 
     .flicker {
@@ -71,19 +65,11 @@
     .kubrik-logo {
       width: 250px;
       height: auto;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 2s ease, transform 2s ease;
-    }
-
-    .kubrik-logo.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-  <!-- MONOLITH LOGO INTRO -->
+  <!-- MONOLITH LOGO -->
   <div class="container">
     <img src="monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
     <div class="flicker"></div>
@@ -92,33 +78,15 @@
   <!-- BLACK SCROLL SPACE -->
   <div class="spacer"></div>
 
-  <!-- KUBRIK LOGO -->
+  <!-- KUBRIK LOGO (STATIC) -->
   <div class="kubrik-section">
-    <img src="Kubrick.png" alt="Kubrik Logo" class="kubrik-logo" id="kubrikLogo">
+    <img src="Kubrick.png" alt="Kubrik Logo" class="kubrik-logo">
   </div>
 
-  <!-- ATMOSPHERIC HUM -->
+  <!-- HUM AUDIO -->
   <audio autoplay loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
-  <!-- SCROLL TRIGGER LOGIC -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const kubrikLogo = document.getElementById('kubrikLogo');
-
-      const revealOnScroll = () => {
-        const rect = kubrikLogo.getBoundingClientRect();
-        const buffer = 200;
-        if (rect.top < window.innerHeight - buffer) {
-          kubrikLogo.classList.add('visible');
-        }
-      };
-
-      revealOnScroll();
-      window.addEventListener('scroll', revealOnScroll);
-    });
-  </script>
 </body>
 </html>
