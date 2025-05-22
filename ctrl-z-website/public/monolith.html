@@ -30,23 +30,12 @@
     .logo {
       width: 300px;
       height: auto;
+      opacity: 0;
+      animation: fadeIn 4s ease-in-out forwards;
     }
 
-    .flicker {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-      mix-blend-mode: screen;
-      opacity: 0.07;
-      animation: flicker 0.2s infinite;
-      z-index: 10;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 0.07; }
-      50% { opacity: 0.02; }
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     .spacer {
@@ -66,13 +55,30 @@
       width: 250px;
       height: auto;
     }
+
+    /* --- Animated Noise Overlay --- */
+    .grain {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://grainy-gradients.vercel.app/noise.gif');
+      background-size: cover;
+      opacity: 0.06;
+      z-index: 999;
+      mix-blend-mode: screen;
+    }
   </style>
 </head>
 <body>
+  <!-- Grain overlay on top of everything -->
+  <div class="grain"></div>
+
   <!-- MONOLITH LOGO -->
   <div class="container">
     <img src="monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
-    <div class="flicker"></div>
   </div>
 
   <!-- BLACK SCROLL SPACE -->
@@ -83,7 +89,7 @@
     <img src="Kubrick.png" alt="Kubrik Logo" class="kubrik-logo">
   </div>
 
-  <!-- HUM AUDIO -->
+  <!-- ATMOSPHERIC HUM -->
   <audio autoplay loop>
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
