@@ -89,32 +89,34 @@
     <div class="flicker"></div>
   </div>
 
-  <!-- BLACK SPACE SCROLL -->
+  <!-- BLACK SCROLL SPACE -->
   <div class="spacer"></div>
 
-  <!-- KUBRIK LOGO REVEAL -->
+  <!-- KUBRIK LOGO -->
   <div class="kubrik-section">
     <img src="Kubrick.png" alt="Kubrik Logo" class="kubrik-logo" id="kubrikLogo">
   </div>
 
-  <!-- ATMOSPHERIC HUM AUDIO -->
+  <!-- ATMOSPHERIC HUM -->
   <audio autoplay loop>
-    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kai_Engel/Chapter_One/Kai_Engel_-_01_-_Snowmen.mp3" type="audio/mpeg">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
-  <!-- SCROLL REVEAL LOGIC -->
+  <!-- SCROLL TRIGGER LOGIC -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const kubrikLogo = document.getElementById('kubrikLogo');
+
       const revealOnScroll = () => {
         const rect = kubrikLogo.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
+        const buffer = 200;
+        if (rect.top < window.innerHeight - buffer) {
           kubrikLogo.classList.add('visible');
         }
       };
 
-      revealOnScroll(); // Run once on load
+      revealOnScroll();
       window.addEventListener('scroll', revealOnScroll);
     });
   </script>
