@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MONOLITH</title>
   <style>
     * {
@@ -15,6 +15,7 @@
       height: 100%;
       background: black;
       overflow-x: hidden;
+      font-family: sans-serif;
     }
 
     .container {
@@ -55,7 +56,7 @@
     }
 
     .spacer {
-      height: 120vh;
+      height: 150vh;
       background: black;
     }
 
@@ -82,29 +83,39 @@
   </style>
 </head>
 <body>
+  <!-- MONOLITH LOGO INTRO -->
   <div class="container">
-    <img src="/monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
+    <img src="monolith_logo_original_ratio_highres.png" alt="Monolith Logo" class="logo">
     <div class="flicker"></div>
   </div>
 
+  <!-- BLACK SPACE SCROLL -->
   <div class="spacer"></div>
 
+  <!-- KUBRIK LOGO REVEAL -->
   <div class="kubrik-section">
     <img src="Kubrick.png" alt="Kubrik Logo" class="kubrik-logo" id="kubrikLogo">
   </div>
 
+  <!-- ATMOSPHERIC HUM AUDIO -->
   <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/02/audio_c14bceede8.mp3" type="audio/mpeg">
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kai_Engel/Chapter_One/Kai_Engel_-_01_-_Snowmen.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
+  <!-- SCROLL REVEAL LOGIC -->
   <script>
-    const kubrikLogo = document.getElementById('kubrikLogo');
-    window.addEventListener('scroll', () => {
-      const rect = kubrikLogo.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8) {
-        kubrikLogo.classList.add('visible');
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      const kubrikLogo = document.getElementById('kubrikLogo');
+      const revealOnScroll = () => {
+        const rect = kubrikLogo.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          kubrikLogo.classList.add('visible');
+        }
+      };
+
+      revealOnScroll(); // Run once on load
+      window.addEventListener('scroll', revealOnScroll);
     });
   </script>
 </body>
